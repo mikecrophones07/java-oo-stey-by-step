@@ -16,4 +16,9 @@ public class Person {
     public Integer getAge(){
         return age;
     }
+
+    public String introduce(){
+        StringBuilder tempStr = new StringBuilder();
+        return tempStr.append("My name is ").append(name).append(". I am ").append(age).append(" years old.").toString();
+    }
 }
