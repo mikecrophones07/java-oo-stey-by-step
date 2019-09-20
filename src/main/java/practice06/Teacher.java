@@ -13,5 +13,10 @@ public class Teacher extends Person {
     public Integer getKlass(){
         return klass;
     }
-    
+
+    @Override
+    public String introduce(){
+        StringBuilder tempStr = new StringBuilder();
+        return tempStr.append(super.introduce()).append(" I am a Teacher. I am at Class ").append(klass).append(".").toString();
+    }
 }
