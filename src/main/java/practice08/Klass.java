@@ -7,4 +7,8 @@ public class Klass {
     public Klass(Integer number){
         this.number = number;
     }
+
+    public Integer getNumber(){
+        return number;
+    }
 }
