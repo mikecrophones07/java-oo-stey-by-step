@@ -2,9 +2,13 @@ package practice07;
 
 public class Klass {
 
-    private Integer klass;
+    private Integer number;
 
-    public Klass(Integer klass){
-        this.klass = klass;
+    public Klass(Integer number){
+        this.number = number;
+    }
+
+    public Integer getNumber(){
+        return number;
     }
 }
