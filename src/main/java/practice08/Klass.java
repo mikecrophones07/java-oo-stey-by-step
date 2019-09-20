@@ -11,4 +11,9 @@ public class Klass {
     public Integer getNumber(){
         return number;
     }
+
+    public String getDisplayName(){
+        StringBuilder str = new StringBuilder();
+        return str.append("Class ").append(number).toString();
+    }
 }
