@@ -22,4 +22,9 @@ public class Student {
     public Integer getKlass(){
         return klass;
     }
+
+    public String introduce(){
+        StringBuilder tempStr = new StringBuilder();
+        return tempStr.append("I am a Student. I am at Class ").append(klass).append(".").toString();
+    }
 }
