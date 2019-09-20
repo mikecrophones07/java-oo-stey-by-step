@@ -17,5 +17,9 @@ public class Student extends Person{
         return klass;
     }
 
-
+    @Override
+    public String introduce(){
+        StringBuilder tempStr = new StringBuilder();
+        return tempStr.append(super.introduce()).append(" I am a Student. I am at ").append(klass.getDisplayName()).append(".").toString();
+    }
 }
