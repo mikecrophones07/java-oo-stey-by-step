@@ -20,6 +20,11 @@ public class Student extends Person{
     @Override
     public String introduce(){
         StringBuilder tempStr = new StringBuilder();
-        return tempStr.append(super.introduce()).append(" I am a Student. I am at ").append(klass.getDisplayName()).append(".").toString();
+        if(klass.getLeader() != null){
+            return tempStr.append(super.introduce()).append(" I am a Student. I am Leader of ").append(klass.getDisplayName()).append(".").toString();
+        }
+        else {
+            return tempStr.append(super.introduce()).append(" I am a Student. I am at ").append(klass.getDisplayName()).append(".").toString();
+        }
     }
 }
