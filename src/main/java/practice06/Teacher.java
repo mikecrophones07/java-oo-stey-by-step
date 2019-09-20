@@ -10,6 +10,10 @@ public class Teacher extends Person {
         this.klass = klass;
     }
 
+    public Teacher(String name, Integer age){
+        super(name, age);
+    }
+
     public Integer getKlass(){
         return klass;
     }
@@ -17,6 +21,11 @@ public class Teacher extends Person {
     @Override
     public String introduce(){
         StringBuilder tempStr = new StringBuilder();
-        return tempStr.append(super.introduce()).append(" I am a Teacher. I am at Class ").append(klass).append(".").toString();
+        if(klass == null){
+            return tempStr.append(super.introduce()).append(" I am a Teacher. I teach No Class.").toString();
+        }
+        else {
+            return tempStr.append(super.introduce()).append(" I am a Teacher. I teach Class ").append(klass).append(".").toString();
+        }
     }
 }
