@@ -32,6 +32,11 @@ public class Teacher extends Person {
 
     public String introduceWith(Student student){
         StringBuilder tempStr = new StringBuilder();
-        return tempStr.append(super.introduce()).append(" I am a Teacher. I teach ").append(student.getName()).append(".").toString();
+        if(klass.getNumber() != student.getKlass().getNumber()) {
+            return tempStr.append(super.introduce()).append(" I am a Teacher. I don't teach ").append(student.getName()).append(".").toString();
+        }
+        else{
+            return tempStr.append(super.introduce()).append(" I am a Teacher. I teach ").append(student.getName()).append(".").toString();
+        }
     }
 }
