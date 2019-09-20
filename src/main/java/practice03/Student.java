@@ -11,4 +11,10 @@ public class Student extends Person {
     public Integer getKlass(){
         return klass;
     }
+
+    @Override
+    public String introduce(){
+        StringBuilder tempStr = new StringBuilder();
+        return tempStr.append("I am a Student. I am at Class ").append(klass).append(".").toString();
+    }
 }
