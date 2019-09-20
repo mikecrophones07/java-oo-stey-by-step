@@ -29,4 +29,9 @@ public class Teacher extends Person {
             return tempStr.append(super.introduce()).append(" I am a Teacher. I teach ").append(klass.getDisplayName()).append(".").toString();
         }
     }
+
+    public String introduceWith(Student student){
+        StringBuilder tempStr = new StringBuilder();
+        return tempStr.append(super.introduce()).append(" I am a Teacher. I teach ").append(student.getName()).append(".").toString();
+    }
 }
