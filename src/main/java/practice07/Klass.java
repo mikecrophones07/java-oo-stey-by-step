@@ -13,6 +13,7 @@ public class Klass {
     }
 
     public String getDisplayName(){
-        return "Class 2";
+        StringBuilder str = new StringBuilder();
+        return str.append("Class ").append(number).toString();
     }
 }
