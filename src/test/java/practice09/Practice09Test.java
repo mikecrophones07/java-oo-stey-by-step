@@ -24,14 +24,14 @@ public class Practice09Test {
         assertThat(person.getName()).isEqualTo("Tom");
         assertThat(person.getAge()).isEqualTo(21);
     }
-//
-//    @Test
-//    public void should_person_with_same_id_be_same_one() throws Exception {
-//        Person person1 = new Person(1, "Tom", 21);
-//        Person person2 = new Person(1, "Tom", 21);
-//        assertThat(person1).isEqualTo(person2);
-//    }
-//
+
+    @Test
+    public void should_person_with_same_id_be_same_one() throws Exception {
+        Person person1 = new Person(1, "Tom", 21);
+        Person person2 = new Person(1, "Tom", 21);
+        assertThat(person1).isEqualTo(person2);
+    }
+
     @Test
     public void should_person_have_an_introduce_method_which_introduce_person_with_name_and_age() throws Exception {
         Person tom = new Person(1, "Tom", 21);
@@ -49,20 +49,20 @@ public class Practice09Test {
         assertThat(klass.getDisplayName()).isEqualTo("Class 2");
     }
 
-//    @Test
-//    public void should_class_not_assign_a_student_as_leader_when_student_is_not_a_member() throws Exception {
-//        Student jerry = new Student(1, "Jerry", 8, new Klass(5));
-//
-//        klass.assignLeader(jerry);
-//
-//        assertThat(systemOut()).isEqualTo("It is not one of us.\n");
-//        assertThat(klass.getLeader()).isNotEqualTo(jerry);
-//    }
-//
-//    private String systemOut() {
-//        return outContent.toString();
-//    }
-//
+    @Test
+    public void should_class_not_assign_a_student_as_leader_when_student_is_not_a_member() throws Exception {
+        Student jerry = new Student(1, "Jerry", 8, new Klass(5));
+
+        klass.assignLeader(jerry);
+
+        assertThat(systemOut()).isEqualTo("It is not one of us.\n");
+        assertThat(klass.getLeader()).isNotEqualTo(jerry);
+    }
+
+    private String systemOut() {
+        return outContent.toString();
+    }
+
     @Test
     public void should_class_assign_a_member_student_as_leader() throws Exception {
         Student jerry = new Student(1, "Jerry", 8, klass);

@@ -28,4 +28,11 @@ public class Person {
         StringBuilder tempStr = new StringBuilder();
         return tempStr.append("My name is ").append(name).append(". I am ").append(age).append(" years old.").toString();
     }
+
+    public boolean equals(Object second){
+        if(!(second instanceof Object))
+            return false;
+        Person temp = (Person) second;
+        return this.name == temp.name && this.id == temp.id && this.age == temp.age;
+    }
 }

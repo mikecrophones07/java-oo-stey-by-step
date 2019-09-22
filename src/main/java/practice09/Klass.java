@@ -3,10 +3,12 @@ package practice09;
 public class Klass {
 
     private Integer number;
-    private Student leader;
+    private Student leader ;
+
 
     public Klass(Integer number){
         this.number = number;
+
     }
 
     public Integer getNumber(){
@@ -19,11 +21,16 @@ public class Klass {
     }
 
     public void assignLeader(Student student){
-        this.leader = student;
+        if(number != student.getKlass().getNumber()){
+            System.out.append("It is not one of us.\n");
+        }
+        else{
+            this.leader = student;
+        }
     }
 
     public Student getLeader(){
-        return leader;
+        return this.leader;
     }
 
     public void appendMember(Student student){

@@ -19,7 +19,12 @@ public class Klass {
     }
 
     public void assignLeader(Student student){
-        this.leader = student;
+        if(number != student.getKlass().getNumber()){
+            System.out.append("It is not one of us.\n");
+        }
+        else{
+            this.leader = student;
+        }
     }
 
     public Student getLeader(){

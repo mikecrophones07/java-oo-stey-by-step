@@ -26,13 +26,13 @@ public class Practice11Test {
         assertThat(person.getAge()).isEqualTo(21);
     }
 
-//    @Test
-//    public void should_person_with_same_id_be_same_one() throws Exception {
-//        Person person1 = new Person(1, "Tom", 21);
-//        Person person2 = new Person(1, "Tom", 21);
-//        assertThat(person1).isEqualTo(person2);
-//    }
-//
+    @Test
+    public void should_person_with_same_id_be_same_one() throws Exception {
+        Person person1 = new Person(1, "Tom", 21);
+        Person person2 = new Person(1, "Tom", 21);
+        assertThat(person1).isEqualTo(person2);
+    }
+
     @Test
     public void should_person_have_an_introduce_method_which_introduce_person_with_name_and_age() throws Exception {
         Person tom = new Person(1, "Tom", 21);
@@ -50,20 +50,20 @@ public class Practice11Test {
         assertThat(klass2.getDisplayName()).isEqualTo("Class 2");
     }
 
-//    @Test
-//    public void should_class_not_assign_a_student_as_leader_when_student_is_not_a_member() throws Exception {
-//        Student jerry = new Student(1, "Jerry", 8, new Klass(5));
-//
-//        klass2.assignLeader(jerry);
-//
-//        assertThat(systemOut()).isEqualTo("It is not one of us.\n");
-//        assertThat(klass2.getLeader()).isNotEqualTo(jerry);
-//    }
-//
-//    private String systemOut() {
-//        return outContent.toString();
-//    }
-//
+    @Test
+    public void should_class_not_assign_a_student_as_leader_when_student_is_not_a_member() throws Exception {
+        Student jerry = new Student(1, "Jerry", 8, new Klass(5));
+
+        klass2.assignLeader(jerry);
+
+        assertThat(systemOut()).isEqualTo("It is not one of us.\n");
+        assertThat(klass2.getLeader()).isNotEqualTo(jerry);
+    }
+
+    private String systemOut() {
+        return outContent.toString();
+    }
+
     @Test
     public void should_class_assign_a_member_student_as_leader() throws Exception {
         Student jerry = new Student(1, "Jerry", 8, klass2);
@@ -162,28 +162,28 @@ public class Practice11Test {
         assertThat(tom.introduceWith(jerry)).isEqualTo("My name is Tom. I am 21 years old. I am a Teacher. I don't teach Jerry.");
     }
 
-//    @Test
-//    public void should_teacher_be_notified_when_student_join_any_classes_it_teaches() throws Exception {
-//        LinkedList<practice11.Klass> linkedList = new LinkedList<Klass>();
-//        linkedList.add(klass2);
-//        Teacher tom = new Teacher(1, "Tom", 21, linkedList);
-//        Student jerry = new Student(1, "Jerry", 8, new Klass(3));
-//
-//        klass2.appendMember(jerry);
-//
-//        assertThat(systemOut().endsWith("I am Tom. I know Jerry has joined Class 2.\n")).isTrue();
-//    }
-//
-//    @Test
-//    public void should_teacher_be_notified_when_any_class_it_teaches_assigned_a_leader() throws Exception {
-//        LinkedList<practice11.Klass> linkedList = new LinkedList<Klass>();
-//        linkedList.add(klass2);
-//        Teacher tom = new Teacher(1, "Tom", 21, linkedList);
-//        Student jerry = new Student(1, "Jerry", 8, new Klass(3));
-//
-//        klass2.appendMember(jerry);
-//        klass2.assignLeader(jerry);
-//
-//        assertThat(systemOut().endsWith("I am Tom. I know Jerry become Leader of Class 2.\n")).isTrue();
-//    }
+    @Test
+    public void should_teacher_be_notified_when_student_join_any_classes_it_teaches() throws Exception {
+        LinkedList<practice11.Klass> linkedList = new LinkedList<Klass>();
+        linkedList.add(klass2);
+        Teacher tom = new Teacher(1, "Tom", 21, linkedList);
+        Student jerry = new Student(1, "Jerry", 8, new Klass(3));
+
+        klass2.appendMember(jerry);
+
+        assertThat(systemOut().endsWith("I am Tom. I know Jerry has joined Class 2.\n")).isTrue();
+    }
+
+    @Test
+    public void should_teacher_be_notified_when_any_class_it_teaches_assigned_a_leader() throws Exception {
+        LinkedList<practice11.Klass> linkedList = new LinkedList<Klass>();
+        linkedList.add(klass2);
+        Teacher tom = new Teacher(1, "Tom", 21, linkedList);
+        Student jerry = new Student(1, "Jerry", 8, new Klass(3));
+
+        klass2.appendMember(jerry);
+        klass2.assignLeader(jerry);
+
+        assertThat(systemOut().endsWith("I am Tom. I know Jerry become Leader of Class 2.\n")).isTrue();
+    }
 }

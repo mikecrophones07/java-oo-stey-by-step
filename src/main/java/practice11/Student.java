@@ -25,4 +25,8 @@ public class Student extends Person {
             return tempStr.append(super.introduce()).append(" I am a Student. I am at ").append(klass.getDisplayName()).append(".").toString();
         }
     }
+
+    public void isIn(Klass klass){
+        this.klass  = klass;
+    }
 }

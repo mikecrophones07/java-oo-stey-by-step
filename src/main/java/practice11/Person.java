@@ -1,6 +1,9 @@
 package practice11;
 
-public class Person {
+import java.util.Observable;
+import java.util.Observer;
+
+public class Person implements Observer {
 
     private String name;
     private Integer age;
@@ -24,5 +27,17 @@ public class Person {
     public String introduce(){
         StringBuilder tempStr = new StringBuilder();
         return tempStr.append("My name is ").append(name).append(". I am ").append(age).append(" years old.").toString();
+    }
+
+    public boolean equals(Object second) {
+        if (!(second instanceof Object))
+            return false;
+        Person temp = (Person) second;
+        return this.name == temp.name && this.id == temp.id && this.age == temp.age;
+    }
+
+    @Override
+    public void update(Observable o, Object arg) {
+
     }
 }
